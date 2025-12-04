@@ -6,7 +6,7 @@ import { fontConfig } from "./fontConfig";
 const SITE_LANG = "zh_CN";
 
 export const siteConfig: SiteConfig = {
-	title: "Firefly",
+	title: "Eternge's blog",
 	subtitle: "Demo site",
 	site_url: "https://firefly.cuteleaf.cn",
 	description:
