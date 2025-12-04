@@ -3,10 +3,6 @@ set -e
 
 # ======= 配置区：按需修改 =======
 BRANCH="master"
-
-VPS_USER="eternge"
-VPS_HOST="你的VPSIP或域名"   # 比如 152.53.xxx.xxx 或 panel.eternge.de
-VPS_PORT="50295"
 VPS_PROJECT_PATH="/opt/firefly/Firefly-blog"
 # ===============================
 
@@ -37,6 +33,6 @@ echo "[local] 推送到 remote ($BRANCH)..."
 git push origin "$BRANCH"
 
 echo "[remote] SSH 到 VPS 执行部署脚本..."
-ssh -p "$VPS_PORT" "${VPS_USER}@${VPS_HOST}" "cd '$VPS_PROJECT_PATH' && ./deploy.sh"
+ssh firefly-vps "cd '$VPS_PROJECT_PATH' && ./deploy.sh"
 
 echo "[done] 所有步骤完成，可以刷新 https://blog.eternge.de 查看效果啦 🎉"
